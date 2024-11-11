@@ -74,6 +74,13 @@
                         <span> Twitter </span>
                     </a>
                 </li>
+                <li class="menu-title mt-2">BELAJAR WORD</li>
+                <li>
+                    <a href="{{ url('word') }}">
+                        <i data-feather=""></i>
+                        <span> Word </span>
+                    </a>
+                </li>
             </ul>
             </ul>
         </div>

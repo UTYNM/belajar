@@ -19,39 +19,35 @@ class PostTwitterController extends Controller
         $consumerSecret = env('TWITTER_CONSUMER_SECRET');
         $accessToken = env('TWITTER_ACCESS_TOKEN');
         $accessTokenSecret = env('TWITTER_ACCESS_TOKEN_SECRET');
-    
         // Create a new TwitterOAuth instance
         $connection = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
         $connection->setApiVersion('2');
-    
         // Retrieve the tweet text from the request
         $status = $request->input('tweet_text');
-    
         // Check if a media file is uploaded
         $mediaIds = [];
         if ($request->hasFile('media')) {
             $mediaPath = $request->file('media')->getPathname();
             $mediaType = $request->file('media')->getMimeType();
-            
+
             // Upload the media to Twitter
             $mediaUpload = $connection->upload('media/upload', ['media' => $mediaPath]);
-            
+
             // Store media ID if upload is successful
             if (isset($mediaUpload->media_id_string)) {
                 $mediaIds[] = $mediaUpload->media_id_string;
             }
         }
-    
+
         // Post the tweet with or without media
         $parameters = ["text" => $status];
         if (!empty($mediaIds)) {
             $parameters['media_ids'] = implode(',', $mediaIds);
         }
-        
+
         $result = $connection->post("tweets", $parameters);
-    
+
         // Return the result (or handle errors as necessary)
         return response()->json($result);
     }
-    
 }

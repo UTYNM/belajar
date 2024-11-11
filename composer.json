@@ -10,7 +10,8 @@
         "atymic/twitter": "^1.1",
         "google/apiclient": "^2.18",
         "laravel/framework": "^11.9",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "phpoffice/phpword": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
