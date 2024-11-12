@@ -77,7 +77,7 @@
                 <li class="menu-title mt-2">BELAJAR WORD</li>
                 <li>
                     <a href="{{ url('word') }}">
-                        <i data-feather=""></i>
+                        <i data-feather="printer"></i>
                         <span> Word </span>
                     </a>
                 </li>
