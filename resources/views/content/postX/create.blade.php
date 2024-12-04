@@ -29,7 +29,7 @@
 
                         <div class="mb-3">
                             <label for="media" class="form-label">Upload Media (photo/video)</label>
-                            <input type="file" class="form-control" id="media" name="media" accept="image/*,video/*" required>
+                            <input type="file" class="form-control" id="media" name="media" accept="image/*,video/*">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Post Tweet</button>

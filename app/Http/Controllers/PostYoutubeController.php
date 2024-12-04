@@ -25,7 +25,6 @@ class PostYoutubeController extends Controller
         // Redirect ke halaman otorisasi Google
         return redirect()->away($client->createAuthUrl());
     }
-
     public function callback(Request $request)
     {
         $client = new Client();

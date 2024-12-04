@@ -77,8 +77,15 @@
                 <li class="menu-title mt-2">BELAJAR WORD</li>
                 <li>
                     <a href="{{ url('word') }}">
-                        <i data-feather=""></i>
+                        <i data-feather="printer"></i>
                         <span> Word </span>
+                    </a>
+                </li>
+                <li class="menu-title mt-2">MAP</li>
+                <li>
+                    <a href="{{ url('map') }}">
+                        <i data-feather="map"></i>
+                        <span> Map   </span>
                     </a>
                 </li>
             </ul>
