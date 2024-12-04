@@ -8,7 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Operator extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['nama', 'alamat', 'jenis_kelamin', 'opd'];
 }
 

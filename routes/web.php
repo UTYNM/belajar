@@ -4,6 +4,7 @@ use App\Http\Controllers\MapController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\PostTwitterController;
+use App\Http\Controllers\OpdController;
 use App\Http\Controllers\PostYoutubeController;
 use App\Http\Controllers\WordController;
 use App\Http\Controllers\JsonController;
@@ -18,6 +19,7 @@ Route::get('/youtube', [PostYoutubeController::class, 'index'])->name('youtube.i
 Route::get('/youtube/authenticate', [PostYoutubeController::class, 'authenticate'])->name('youtube.authenticate');
 Route::get('/youtube/callback', [PostYoutubeController::class, 'callback'])->name('youtube.callback');
 Route::post('/youtube/upload', [PostYoutubeController:: class, 'upload'])->name('youtube.upload');
+Route::post('/youtube/upload', [PostYoutubeController:: class, 'upload'])->name('youtube.upload');
 
 //twitter
 // Route::get('/post-tweet', [PostTwitterController::class, 'postTweet']);
@@ -30,12 +32,12 @@ Route::controller(WordController::class)->group(function () {
 });
 
 Route::controller(OperatorController::class)->group(function () {
-    Route::get('/operators', 'index');;
-    Route::get('/operators/create', 'create');
-    Route::post('/operators/store', 'store');
-    Route::get('/operators/{operators}/edit', 'edit');
-    Route::put('/operators/{operators}/update', 'update');
-    Route::get('/operators/{operators}/delete', 'destroy');
+    Route::get('/operator', 'index');;
+    Route::get('/operator/create', 'create');
+    Route::post('/operator/store', 'store');
+    Route::get('/operator/{operator}/edit', 'edit');
+    Route::put('/operator/{operator}/update', 'update');
+    Route::get('/operator/{operator}/delete', 'destroy');
 });
 
 Route::controller(JsonController::class)->group(function () {

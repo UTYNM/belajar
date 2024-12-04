@@ -9,13 +9,13 @@ class OperatorController extends Controller
 {
     public function index()
     {
-      $data['operators'] = Operator::all();
-      return view('content.operators.index', $data);
+      $data['operator'] = Operator::all();
+      return view('content.operator.index', $data);
     }
 
     public function create()
     {
-      return view('content.operators.create');
+      return view('content.operator.create');
     }
 
     public function store(Request $request)
@@ -27,19 +27,19 @@ class OperatorController extends Controller
       $anggota->opd = $request->opd;
       $anggota->save();
 
-        return redirect('operators')->with('success', 'Operator created successfully.');
+        return redirect('operator')->with('success', 'Operator created successfully.');
     }
 
     public function show(Operator $operator)
     {
         $data['operator'] = $operator;
-        return view('content.operators.show', $data);
+        return view('content.operator.show', $data);
     }
 
     public function edit(Operator $operator)
     {
        $data['operator'] = $operator;
-        return view('content.operators.edit', $data);
+        return view('content.operator.edit', $data);
     }
     
     public function update(Request $request,Operator $operator)
